@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://biatgput83bo1"]
+
+[ext_resource type="Material" uid="uid://dou27igxo56x4" path="res://multi_mesh_material.tres" id="1_c7qwk"]
+[ext_resource type="Texture2D" uid="uid://pqa61v6jj1ao" path="res://UV_checker_Map_byValle.jpg" id="2_ndt6u"]
+
+[node name="SingleCheckerTest" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_c7qwk")
+texture = ExtResource("2_ndt6u")

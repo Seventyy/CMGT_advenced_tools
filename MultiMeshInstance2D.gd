@@ -6,6 +6,7 @@ extends MultiMeshInstance2D
 	set(val):
 		populate_random()
 
+
 func populate_random() -> void:
 	for i in range(multimesh.instance_count):
 		var position = Transform2D()

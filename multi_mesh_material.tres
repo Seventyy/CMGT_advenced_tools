@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dou27igxo56x4"]
+
+[ext_resource type="Shader" path="res://multi_mesh.gdshader" id="1_ihskp"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tnvsw"]
+noise_type = 2
+seed = 2735
+fractal_type = 0
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3gjjj"]
+noise = SubResource("FastNoiseLite_tnvsw")
+
+[resource]
+shader = ExtResource("1_ihskp")
+shader_parameter/a = 20.0
+shader_parameter/b = 1.0
+shader_parameter/c = 6.51
+shader_parameter/d = 2.0
+shader_parameter/wind_noise_map = SubResource("NoiseTexture2D_3gjjj")
