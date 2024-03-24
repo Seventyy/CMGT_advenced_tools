@@ -1,15 +1,20 @@
 @tool
 extends MultiMeshInstance2D
 
-
 @export var populate_random_:bool:
 	set(val):
 		populate_random()
 
+@export var box_size:int = 100 
 
 func populate_random() -> void:
+	var positions:Array[Vector2]
 	for i in range(multimesh.instance_count):
-		var position = Transform2D()
-		position = position.translated(Vector2(randf_range(-100,100), randf_range(-100,100)))
-		multimesh.set_instance_transform_2d(i, position)
-
+		var transform2D = Transform2D()
+		transform2D = transform2D.translated(Vector2(
+			randf_range(-box_size/2,box_size/2),
+			randf_range(-box_size/2,box_size/2)
+		))
+		positions.append(transform2D.origin)
+		multimesh.set_instance_transform_2d(i, transform2D)
+	material.set("shader_parameter/instances_positions", positions);
