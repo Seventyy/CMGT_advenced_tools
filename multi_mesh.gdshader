@@ -16,17 +16,25 @@ uniform float wind_speed;
 uniform float horizontal_strength;
 uniform float vertical_strength;
 
+uniform vec4[2] grass_gradient : source_color;
+uniform vec4 color_bend : source_color;
+
 uniform sampler2D wind_noise_map;
 
-varying vec4 color;
+varying float horizontal_gust;
 
 void vertex() {
 	vec2 vertex = vec2(0);
-	color = texture(wind_noise_map, mod(instances_positions[INSTANCE_ID] - wind_directon * TIME * wind_speed, world_size)/world_size);
-	vertex.x = -pow(UV.y-1.,2.) * -horizontal_strength;
+	horizontal_gust = texture(
+		wind_noise_map,
+		mod(instances_positions[INSTANCE_ID] - wind_directon * TIME * wind_speed, world_size)/world_size
+	).r;
+	vertex.x = -pow(UV.y,2.) * -horizontal_strength * (horizontal_gust - 0.5) * 2.;
 	VERTEX = (UV + vertex) * grass_size;
+	VERTEX.y = -VERTEX.y;
+	
 }
 
 void fragment() {
-	COLOR = color;
+	COLOR = mix(mix(grass_gradient[0], grass_gradient[1], UV.y), color_bend, horizontal_gust);
 }

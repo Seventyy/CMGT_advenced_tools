@@ -14,3 +14,11 @@ config/name="CMGT_advenced_tools"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[debug]
+
+shader_language/warnings/unused_uniform=false
+
+[rendering]
+
+limits/warnings/unused_uniform=true
