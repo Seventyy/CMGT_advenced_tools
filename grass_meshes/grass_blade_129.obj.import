@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cjt2mlmx1go3u"
+path="res://.godot/imported/grass_blade_129.obj-2cac6dd77ed2aecafdae9fa90a02afc0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/grass_blade_129.obj-2cac6dd77ed2aecafdae9fa90a02afc0.mesh"]
+
+source_file="res://grass_meshes/grass_blade_129.obj"
+dest_files=["res://.godot/imported/grass_blade_129.obj-2cac6dd77ed2aecafdae9fa90a02afc0.mesh", "res://.godot/imported/grass_blade_129.obj-2cac6dd77ed2aecafdae9fa90a02afc0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
