@@ -26,7 +26,6 @@ texture = SubResource("GradientTexture2D_bnox0")
 
 [node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="."]
 material = ExtResource("1_n8rgp")
-rotation = -0.0022843
 multimesh = SubResource("MultiMesh_6yrq3")
 texture = ExtResource("2_wjhji")
 script = ExtResource("1_iwsrb")

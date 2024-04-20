@@ -5,9 +5,6 @@
 
 [resource]
 shader = ExtResource("1_ihskp")
-shader_parameter/a = 61
-shader_parameter/b = 6.06
-shader_parameter/c = 1.53
 shader_parameter/grass_size = 10.0
 shader_parameter/world_size = 200.0
 shader_parameter/wind_directon = Vector2(1, -1)

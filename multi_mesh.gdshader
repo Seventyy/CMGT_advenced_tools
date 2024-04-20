@@ -1,12 +1,5 @@
 shader_type canvas_item;
 
-uniform int a;
-uniform float b;
-uniform float c;
-
-//const int instance_count = 4000;
-//uniform vec2[instance_count] instances_positions;
-
 uniform float grass_size;
 uniform float world_size;
 
