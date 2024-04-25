@@ -1,11 +1,12 @@
 extends Node
 
-@export var time_per_mesh:float = 45
-@export var runs:int = 20
-@export var start_time:float = 600
-@export var end_time:float = 10
+@export var time_per_mesh:float = 1
+@export var runs:int = 3
+@export var start_time:float = 1
+@export var end_time:float = 1
 
 @export var meshes:Array[Mesh]
+@export var amounts:Array[int]
 
 @onready var multi_mesh:MultiMeshInstance2D = %MultiMeshInstance2D
 
@@ -13,6 +14,12 @@ extends Node
 
 var frames_elapsed:int
 var time_elapsed:float
+
+class TestSetData:
+	var run_id:int
+	var grass_amount:int
+	var vertex_count:int
+	var avarage_frame_time:float
 
 func _ready():
 	perform_tests()
@@ -26,14 +33,17 @@ func perform_tests():
 	file = FileAccess.open("res://resoults.txt", FileAccess.WRITE)
 	
 	for i in runs:
-		file.store_string("Test #" + str(i + 1) + "\n")
-		
 		for mesh in meshes:
-			multi_mesh.multimesh.mesh = mesh
-			
-			start_profiler()
-			await get_tree().create_timer(time_per_mesh).timeout
-			end_profiler(mesh)
+			for amount in amounts:
+				
+				multi_mesh.multimesh.mesh = mesh
+				multi_mesh.multimesh.instance_count = amount
+				multi_mesh.populate_random()
+				
+				
+				start_profiler()
+				await get_tree().create_timer(time_per_mesh).timeout
+				end_profiler(mesh)
 			
 		file.store_string("\n")
 		
@@ -49,9 +59,9 @@ func end_profiler(mesh:Mesh):
 		mesh.resource_path
 		 .trim_prefix("res://grass_meshes/grass_blade_")
 		 .trim_suffix(".obj") + "\t" + 
-		str(frames_elapsed).pad_zeros(6) + "\t" +
-		str(time_elapsed).pad_zeros(2).pad_decimals(15) + "\n" 
-		#str(1000 * time_elapsed / frames_elapsed) + "\n"
+		#str(frames_elapsed).pad_zeros(6) + "\t" +
+		#str(time_elapsed).pad_zeros(2).pad_decimals(15) + "\n" +
+		str(1000 * time_elapsed / frames_elapsed) + "\n"
 	)
 	
 
