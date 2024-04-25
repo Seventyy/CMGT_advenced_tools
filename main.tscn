@@ -29,6 +29,7 @@ buffer = PackedFloat32Array(1, 0, 0, -167.831, 0, 1, 0, -500, 1, 0, 0, 294.212, 
 
 [node name="TestRunner" type="Node" parent="."]
 script = ExtResource("5_6tf8t")
+start_time = 600.0
 meshes = Array[Mesh]([ExtResource("3_0o2dw"), ExtResource("3_0kqaw"), ExtResource("4_svdxf"), ExtResource("5_wln0r"), ExtResource("6_8vf46"), ExtResource("7_1lvwk"), ExtResource("3_5rehl")])
 amounts = Array[int]([1250, 2500, 5000, 10000, 20000, 40000, 80000])
 
