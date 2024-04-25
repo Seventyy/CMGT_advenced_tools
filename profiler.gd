@@ -3,7 +3,7 @@ extends Node
 @export var time_per_mesh:float = 15
 @export var runs:int = 8
 @export var start_time:float = 10
-@export var end_time:float = 1
+
 
 @export var meshes:Array[Mesh]
 @export var amounts:Array[int]
@@ -18,6 +18,7 @@ var time_elapsed:float
 var data:Array[TestData]
 
 class TestData:
+
 	var run_id:int
 	var grass_amount:int
 	var vertex_count:int
@@ -65,10 +66,12 @@ func reset_profiler():
 	time_elapsed = 0
 	frames_elapsed = 0
 
+
 func save_resoults():
 	var last_run_id:int = 0
 	var last_vertex_count:int = 3
 	var line := PackedStringArray()
+
 	
 	for d in data:
 		if last_vertex_count != d.vertex_count:
