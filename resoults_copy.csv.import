@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bksn4qn6hdbtp"
+
+[deps]
+
+files=["res://resoults_copy.1250.translation", "res://resoults_copy.2500.translation", "res://resoults_copy.5000.translation", "res://resoults_copy.10000.translation", "res://resoults_copy.20000.translation", "res://resoults_copy.40000.translation", "res://resoults_copy.80000.translation"]
+
+source_file="res://resoults_copy.csv"
+dest_files=["res://resoults_copy.1250.translation", "res://resoults_copy.2500.translation", "res://resoults_copy.5000.translation", "res://resoults_copy.10000.translation", "res://resoults_copy.20000.translation", "res://resoults_copy.40000.translation", "res://resoults_copy.80000.translation"]
+
+[params]
+
+compress=true
+delimiter=0
