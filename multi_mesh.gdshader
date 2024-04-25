@@ -23,6 +23,7 @@ void vertex() {
 		mod(MODEL_MATRIX[3].xy - wind_directon * TIME * wind_speed, world_size)/world_size
 	).r;
 	vertex.x = -pow(UV.y,2.) * -horizontal_strength * (horizontal_gust - 0.5) * 2.;
+	vertex.y = -(UV.y * vertical_strength * abs((horizontal_gust - 0.5) * 2.));
 	VERTEX = (UV + vertex) * grass_size;
 	VERTEX.y = -VERTEX.y;
 	
